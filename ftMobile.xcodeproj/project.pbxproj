@@ -12,6 +12,7 @@
 		4B0C9CAB1F3145BA001DCEC9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B0C9CA91F3145BA001DCEC9 /* Main.storyboard */; };
 		4B0C9CAD1F3145BA001DCEC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B0C9CAC1F3145BA001DCEC9 /* Assets.xcassets */; };
 		4B0C9CB01F3145BA001DCEC9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B0C9CAE1F3145BA001DCEC9 /* LaunchScreen.storyboard */; };
+		4B0C9CBB1F316FAD001DCEC9 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B0C9CBA1F316FAD001DCEC9 /* SWRevealViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,9 @@
 		4B0C9CAC1F3145BA001DCEC9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4B0C9CAF1F3145BA001DCEC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4B0C9CB11F3145BA001DCEC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4B0C9CB81F316FAD001DCEC9 /* ftMobile-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ftMobile-Bridging-Header.h"; sourceTree = "<group>"; };
+		4B0C9CB91F316FAD001DCEC9 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		4B0C9CBA1F316FAD001DCEC9 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,7 @@
 		4B0C9CA41F3145BA001DCEC9 /* ftMobile */ = {
 			isa = PBXGroup;
 			children = (
+				4B0C9CB71F316F70001DCEC9 /* Lib */,
 				4B0C9CA51F3145BA001DCEC9 /* AppDelegate.swift */,
 				4B0C9CA71F3145BA001DCEC9 /* ViewController.swift */,
 				4B0C9CA91F3145BA001DCEC9 /* Main.storyboard */,
@@ -62,6 +67,16 @@
 				4B0C9CB11F3145BA001DCEC9 /* Info.plist */,
 			);
 			path = ftMobile;
+			sourceTree = "<group>";
+		};
+		4B0C9CB71F316F70001DCEC9 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				4B0C9CB91F316FAD001DCEC9 /* SWRevealViewController.h */,
+				4B0C9CBA1F316FAD001DCEC9 /* SWRevealViewController.m */,
+				4B0C9CB81F316FAD001DCEC9 /* ftMobile-Bridging-Header.h */,
+			);
+			name = Lib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,6 +111,7 @@
 				TargetAttributes = {
 					4B0C9CA11F3145BA001DCEC9 = {
 						CreatedOnToolsVersion = 8.3;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -138,6 +154,7 @@
 			files = (
 				4B0C9CA81F3145BA001DCEC9 /* ViewController.swift in Sources */,
 				4B0C9CA61F3145BA001DCEC9 /* AppDelegate.swift in Sources */,
+				4B0C9CBB1F316FAD001DCEC9 /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,10 +279,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = ftMobile/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.toanhtran.ftMobile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ftMobile/ftMobile-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -274,10 +294,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = ftMobile/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.toanhtran.ftMobile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ftMobile/ftMobile-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
